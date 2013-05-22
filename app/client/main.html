@@ -1,0 +1,47 @@
+<body>
+  <div class="container-fluid" id="main-container">
+    <div class="row-fluid">
+    {{> NavBar}}
+    </div>
+    {{> ContentEngine}}
+  </div>
+</body>
+
+<template name="NavBar">
+  <div class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="#" data-route="{{culture}}/index">{{localize "app-title"}}</a>
+      <ul class="nav">
+        <li><a href="#" data-route="{{culture}}/users"> {{localize "users"}}</a></li>
+        <li><a href="#" data-route="{{culture}}/tasks"> {{localize "tasks"}}</a></li>
+      </ul>
+      <ul class="nav pull-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            {{localize "language"}}
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#" data-route="en/index">{{localize "english"}} (english)</a></li>
+            <li><a href="#" data-route="es/index">{{localize "spanish"}} (spanish)</a></li>
+            <li><a href="#" data-route="zh/index">{{localize "chinese"}} (chinese)</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</template>
+
+<template name="ContentEngine">
+  <div class="row-fluid">
+    <div class="span12">{{{content}}}</div>
+  </div>
+</template>
+
+<template name="NotFound">
+  <div class="container-fluid" id="main-container">
+    <div class="row-fluid">
+      <h1>{{localize "not-found"}}</h1>
+    </div>
+  </div>
+</template>
